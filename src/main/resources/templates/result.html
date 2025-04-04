@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>농작물 식별 결과</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #2e7d32;
+        }
+
+        .result-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>농작물 식별 결과</h1>
+
+    <div class="result-section">
+        <h2>식별된 작물</h2>
+        <p th:text="${result.cropName}">작물 이름</p>
+    </div>
+
+    <div class="result-section">
+        <h2>작물 설명</h2>
+        <p th:text="${result.description}">작물 설명</p>
+    </div>
+
+    <div class="result-section">
+        <h2>재배 방법</h2>
+        <p th:text="${result.cultivationMethod}">재배 방법</p>
+    </div>
+
+    <a href="/" class="button">다시 분석하기</a>
+</div>
+</body>
+</html>
